@@ -3,8 +3,14 @@
 import npyscreen
 from projects import python
 
-def simple_function(*arguments):
-    pass
+class MainForm(npyscreen.Form):
+    def create(self):
+        pass
+
+class App(npyscreen.NPSAppManaged):
+    def onStart(self):
+        self.addForm("MAIN", MainForm, name="Project Creator")
+
     # print("---------------")
     # print("PROJECT CREATOR")
     # print("---------------")
@@ -31,6 +37,6 @@ def simple_function(*arguments):
     # # print(os.getcwd())
 
 if __name__ == "__main__":
-    npyscreen.wrapper_basic(simple_function)
+    app = App().run()
 
 
