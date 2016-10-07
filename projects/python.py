@@ -15,8 +15,7 @@ def create_project():
             os.makedirs(full_path)
             print("Creating project folder...OK")
 
-            # initialize git repository
-            
+            # initialize git repository            
             pr = subprocess.Popen("/usr/bin/git init", cwd=full_path,
                                   shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             print("Creating git repository...OK")
